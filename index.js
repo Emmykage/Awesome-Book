@@ -1,20 +1,8 @@
-const booklist = [{
-    title: "",
-    author : "",
-}]
-
-
-let books = new Object();
-books.title = "to kill a mocking bird";
-books.author = "Philip Lahm";
-
-console.log(books);
 
 const addBtn = document.getElementById("add");
-
 const body = document.querySelector(".container");
-const bkName = document.getElementById("name");
-const bkAuthor = document.getElementById("author");
+const bookName = document.getElementById("name");
+const bookAuthor = document.getElementById("author");
 
 
 
@@ -26,19 +14,31 @@ function addBook (){
     let rmBtn = document.createElement("button");
     let hr = document.createElement("hr");
 
+
+    rmBtn.innerHTML = "Remove";
+
     body.appendChild(bkdiv);
     bkdiv.appendChild(addTitle);
     bkdiv.appendChild(addAuthor);
+    bkdiv.appendChild(rmBtn);
     bkdiv.appendChild(hr);
 
+//     let book = {title: 'bookName.value', author: 'bookAuthor.value'};
+// bookList.push(book);
 
 
-    books.title =  bkname.value;
-    books.author =  bkAuthor.value;
+    
+    // let books = new Object;
+    // // books.title =  bkname.value;
+    // books.author =  bkAuthor.value;
+    
 
-    addTitle.innerHTML = books.title
+    addTitle.innerHTML = bookName.value;
+    addAuthor.innerHTML = bookAuthor.value;
+
     
     
 
-}
+};
+
 addBtn.addEventListener("click", addBook);

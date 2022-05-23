@@ -1,9 +1,1 @@
-let cat = {
-
-}
-let dog = {
-    
-}
-let Thecat = new Object;
-Thecat.alsatian = "tom";
-console.log(Thecat);
+const addBtn = document.getElementById("add");
