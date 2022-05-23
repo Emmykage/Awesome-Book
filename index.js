@@ -22,6 +22,15 @@ function displayBook (title, author){
     //Remove Button
     let rmBtn = document.createElement("button");
     rmBtn.textContent = "Remove";
+    rmBtn.classList.add('rmbtn');
+
+    // const rembut = document.querySelectorAll('.rmbtn');
+    // for (let i = 0; i < rembut.length; i++) {
+    //     rembut[i]
+    // }
+    // //rmBtn.id = 
+
+
     bkdiv.appendChild(rmBtn);
 
     let hr = document.createElement("hr");
@@ -39,7 +48,8 @@ function displayBook (title, author){
 };
 
 function addBook(title, author) {
-    let book = {title, author};
+    const bookId = Math.random();
+    const book = {title, author, id: bookId};
     bookList.push(book);
     console.log(bookList);
 }
