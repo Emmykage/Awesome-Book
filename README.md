@@ -44,11 +44,11 @@ To clone this project:
 
 ## Authors
 
-👤 **Ben Omayio**
+👤 **Jesús Vázquez**
 
-- GitHub: [@kiboma2021](https://github.com/kiboma2021)
-- Twitter: [@BenOmayio](https://twitter.com/omayiobenj)
-- LinkedIn: [@BenOmayio](https://www.linkedin.com/in/ben-omayio-74622469/)
+- GitHub: [@jevazquezb](https://github.com/jevazquezb)
+- Twitter: [@javb_1187](https://twitter.com/javb_1187)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/jevazquezb)
 
 👤 **Ben Omayio**
 
@@ -66,9 +66,9 @@ To clone this project:
 
 ## 🤝 Contributers
 
+-  Jesús Vázquez: [@jevazquezb](https://github.com/jevazquezb)
 -  Ben Kiboma Omayio: [@kiboma2021](https://github.com/kiboma2021)
--  Ben Kiboma Omayio: [@kiboma2021](https://github.com/kiboma2021)
--  Ben Kiboma Omayio: [@emmykage](https://github.com/Emmykage)
+-  Morris Menanya: [@emmykage](https://github.com/Emmykage)
 
 
 ## Show your support
