@@ -56,11 +56,11 @@ To clone this project:
 - Twitter: [@BenOmayio](https://twitter.com/omayiobenj)
 - LinkedIn: [@BenOmayio](https://www.linkedin.com/in/ben-omayio-74622469/)
 
-👤 **Ben Omayio**
+👤 **Morris Menanya**
 
-- GitHub: [@kiboma2021](https://github.com/kiboma2021)
-- Twitter: [@BenOmayio](https://twitter.com/omayiobenj)
-- LinkedIn: [@BenOmayio](https://www.linkedin.com/in/ben-omayio-74622469/)
+- GitHub: [@emmykage](https://github.com/Emmykage)
+- Twitter: [@emmykage](https://twitter.com/omayiobenj)
+- LinkedIn: [Menanya Morris](https://www.linkedin.com/in/morris-menanya-a51985104/)
 
 
 
@@ -68,7 +68,7 @@ To clone this project:
 
 -  Ben Kiboma Omayio: [@kiboma2021](https://github.com/kiboma2021)
 -  Ben Kiboma Omayio: [@kiboma2021](https://github.com/kiboma2021)
--  Ben Kiboma Omayio: [@kiboma2021](https://github.com/kiboma2021)
+-  Ben Kiboma Omayio: [@emmykage](https://github.com/Emmykage)
 
 
 ## Show your support
