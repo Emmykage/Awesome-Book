@@ -3,9 +3,20 @@ const addBtn = document.getElementById("add");
 const body = document.querySelector(".container");
 const bookName = document.getElementById("name");
 const bookAuthor = document.getElementById("author");
-const bookList = [];
+let bookList = [];
 
-function displayBook (title, author){
+function remBook(e) {
+    //Remove from localStorage
+    bookList = JSON.parse(localStorage.getItem('bookList'));
+    const bookId = e.target.id;
+    const filteredBooks= bookList.filter((book) => book.id !== bookId);    
+    localStorage.setItem('bookList', JSON.stringify(filteredBooks));
+
+    //Remove from the screen    
+    e.target.parentElement.remove();
+}
+
+function displayBook (title, author, id){
     let bookContainer = document.querySelector('.col-1');
 
     let bkdiv = document.createElement("div");
@@ -23,6 +34,8 @@ function displayBook (title, author){
     let rmBtn = document.createElement("button");
     rmBtn.textContent = "Remove";
     rmBtn.classList.add('rmbtn');
+    rmBtn.id = id;
+    rmBtn.addEventListener('click', remBook);
 
     // const rembut = document.querySelectorAll('.rmbtn');
     // for (let i = 0; i < rembut.length; i++) {
@@ -48,10 +61,10 @@ function displayBook (title, author){
 };
 
 function addBook(title, author) {
-    const bookId = Math.random();
+    const bookId = Math.random().toString(36).replace(/[^a-z]+/g, '').slice(2, 5);
     const book = {title, author, id: bookId};
     bookList.push(book);
-    console.log(bookList);
+    return bookId;   
 }
 
 function saveBook() {
@@ -59,7 +72,7 @@ function saveBook() {
 }
 
 addBtn.addEventListener("click", () => {
-    addBook(bookName.value, bookAuthor.value);
+    let bookId = addBook(bookName.value, bookAuthor.value);
     saveBook();
-    displayBook(bookName.value, bookAuthor.value);   
+    displayBook(bookName.value, bookAuthor.value, bookId);   
 });
