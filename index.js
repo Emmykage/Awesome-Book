@@ -1,3 +1,5 @@
+/* eslint-disable max-classes-per-file */
+
 // Extracted function from lesson
 function storageAvailable(type) {
   let storage;
@@ -29,18 +31,50 @@ function storageAvailable(type) {
 const bookName = document.getElementById('name');
 const bookAuthor = document.getElementById('author');
 const addBtn = document.getElementById('add');
-let bookList;
+let books;
 
-function removeBook(e) {
-  // Remove from localStorage
-  bookList = JSON.parse(localStorage.getItem('bookList'));
-  const bookId = e.target.id;
-  const filteredBooks = bookList.filter((book) => book.id !== bookId);
-  localStorage.setItem('bookList', JSON.stringify(filteredBooks));
-
-  // Remove from the screen
-  e.target.parentElement.remove();
+class Book {
+  constructor(title = null, author = null, id = null) {
+    this.title = title;
+    this.author = author;
+    this.id = id;
+  }
 }
+
+class BookManager {
+  constructor() {
+    this.bookList = null;
+  }
+
+  getBooks() {
+    this.bookList = JSON.parse(localStorage.getItem('bookList')) || [];
+    return this.bookList;
+  }
+
+  saveBooks() {
+    localStorage.setItem('bookList', JSON.stringify(this.bookList));
+  }
+
+  addBook(title, author) {
+    const bookId = Math.random().toString(36).replace(/[^a-z]+/g, '').slice(2, 5);
+    const newBook = new Book(title, author, bookId);
+    this.bookList.push(newBook);
+    return bookId;
+  }
+
+  removeBook(e) {
+    // Remove from localStorage
+    this.bookList = JSON.parse(localStorage.getItem('bookList'));
+    const bookId = e.target.id;
+    const filteredBooks = this.bookList.filter((book) => book.id !== bookId);
+    localStorage.setItem('bookList', JSON.stringify(filteredBooks));
+
+    // Remove from the screen
+    e.target.parentElement.remove();
+  }
+}
+
+const library = new BookManager();
 
 function displayBook(title, author, id) {
   // Book list container
@@ -64,7 +98,7 @@ function displayBook(title, author, id) {
   rmBtn.textContent = 'Remove';
   rmBtn.classList.add('rmbtn');
   rmBtn.id = id;
-  rmBtn.addEventListener('click', removeBook);
+  rmBtn.addEventListener('click', library.removeBook);
   bkdiv.appendChild(rmBtn);
 
   // Parting line
@@ -74,32 +108,17 @@ function displayBook(title, author, id) {
   bookContainer.appendChild(bkdiv);
 }
 
-function getBooks() {
-  bookList = JSON.parse(localStorage.getItem('bookList')) || [];
-}
-
-function saveBooks() {
-  localStorage.setItem('bookList', JSON.stringify(bookList));
-}
-
-function addBook(title, author) {
-  const bookId = Math.random().toString(36).replace(/[^a-z]+/g, '').slice(2, 5);
-  const newBook = { title, author, id: bookId };
-  bookList.push(newBook);
-  return bookId;
-}
-
 if (storageAvailable('localStorage')) {
   window.addEventListener('load', () => {
-    getBooks();
-    if (bookList.length !== 0) {
-      bookList.forEach((book) => displayBook(book.title, book.author, book.id));
+    books = library.getBooks();
+    if (books.length !== 0) {
+      books.forEach((book) => displayBook(book.title, book.author, book.id));
     }
   });
   addBtn.addEventListener('click', () => {
-    getBooks();
-    const bookId = addBook(bookName.value, bookAuthor.value);
-    saveBooks();
+    library.getBooks();
+    const bookId = library.addBook(bookName.value, bookAuthor.value);
+    library.saveBooks();
     displayBook(bookName.value, bookAuthor.value, bookId);
   });
 }
