@@ -153,12 +153,20 @@ class Books{
     this.author = author
   }
 }
-const bookLibrary = [];
+const bookLibrary = [{
+  title: "Arabian Knight",
+  author: "Aladin"
+},
+{
+  title: "King Kuta",
+  author: "Ahmed"
+}];
 
 class Interface{
   static display(){
     bookLibrary.forEach(book => Interface.addBook(book))
 
+  
   }
 
   static addBook(book){
@@ -170,40 +178,59 @@ class Interface{
       // Book container
       const bkdiv = document.createElement('div');
       bkdiv.classList.add('flex');
+    // // -------------------- come back to reconcile this------------------
+    //   // book-details container
+    //   const bkdetails = document.createElement('div');
+    //   bkdetails.classList.add('bk-details');
+    //   bkdiv.appendChild(bkdetails);
     
-      // book-details container
-      const bkdetails = document.createElement('div');
-      bkdetails.classList.add('bk-details');
-      bkdiv.appendChild(bkdetails);
+    //   // Title of the book
+    //   const addTitle = document.createElement('h2');
+    //   addTitle.innerHTML = `"${x}"`;
+    //   bkdetails.appendChild(addTitle);
     
-      // Title of the book
-      const addTitle = document.createElement('h2');
-      addTitle.textContent = `"${title}"`;
-      bkdetails.appendChild(addTitle);
+    //   // paragraph insertion
     
-      // paragraph insertion
+    //   const paragraph = document.createElement('p');
+    //   bkdetails.appendChild(paragraph);
+    //   paragraph.innerText = 'by';
     
-      const paragraph = document.createElement('p');
-      bkdetails.appendChild(paragraph);
-      paragraph.innerText = 'by';
+    //   // Author of the book
+    //   const addAuthor = document.createElement('p');
+    //   addAuthor.innerHTML = y;
+    //   bkdetails.appendChild(addAuthor);
     
-      // Author of the book
-      const addAuthor = document.createElement('p');
-      addAuthor.innerHTML = author;
-      bkdetails.appendChild(addAuthor);
+    //   // btn-details container
+    //   const btnDiv = document.createElement('div');
+    //   btnDiv.classList.add('btn-details');
+    //   bkdiv.appendChild(btnDiv);
     
-      // btn-details container
-      const btnDiv = document.createElement('div');
-      btnDiv.classList.add('btn-details');
-      bkdiv.appendChild(btnDiv);
-    
-      // Remove Button
-      const rmBtn = document.createElement('button');
-      rmBtn.textContent = 'Remove';
-      rmBtn.classList.add('rmbtn');
-      // rmBtn.id = id;
-      // rmBtn.addEventListener('click', library.removeBook);
-      btnDiv.appendChild(rmBtn);
+    //   // Remove Button
+
+
+    //   const rmBtn = document.createElement('button');
+    //   rmBtn.textContent = 'Remove';
+    //   rmBtn.classList.add('rmbtn');
+
+
+    //   // rmBtn.id = id;
+    //   // rmBtn.addEventListener('click', library.removeBook);
+    //   btnDiv.appendChild(rmBtn);
+
+
+      // end
+
+
+
+      // --------- second method -----------------------
+      bkdiv.innerHTML = `
+        <div class="bk-details"> <h2>"${book.title}"</h2></div>
+        <p>by</p>
+        <p> ${book.author}</p>
+        <button> Remove </button>
+      
+      `
+      // ------------end-------------------
 
       bookContainer.appendChild(bkdiv);
 
@@ -213,13 +240,16 @@ class Interface{
 Interface.display()
 
 addBtn = document.getElementById("add");
-addBtn.addEventListener("click", function(){
+document.getElementById("form").addEventListener("submit", function(){
 
   const title = document.getElementById("name").value;
-  const author = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
 
-  // Interface.display()
+
+  const book = new Books(title, author);
+  Interface.addBook(book);
+
+  // Interface.display(title, author)
 
 
 })
-
