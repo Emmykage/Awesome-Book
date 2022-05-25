@@ -6,7 +6,23 @@
   margin: auto;
   max-width: 80%;
 }
+nav{
+  display: flex;
+  justify-content: right;
+  align-items: center;
 
+}
+nav ul{
+  display: flex;
+  list-style: none;
+}
+nav ul li{
+  padding: 12px;
+
+}
+nav ul li a{
+  text-decoration: none;
+}
 h1 {
   text-align: center;
 }
