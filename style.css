@@ -1,3 +1,80 @@
 * {
   background-color: transparent;
 }
+
+.container{
+  margin: auto;
+  max-width: 80%;
+}
+h1{
+  text-align: center;
+}
+.col-1{
+  width: 100%;
+}
+.flex{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+
+
+}
+.bk-details{
+  display: flex;
+  align-items: center;
+}
+p{
+  padding: 8px;
+}
+
+.flex:nth-child(odd){
+  background-color: grey;
+};
+.flex:nth-child(even){
+  background-color: rgb(207, 207, 207);
+};
+.add-book{
+  margin: auto;
+}
+.color {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.blue{
+  background-color: blue;
+  width: 100px;
+  height: 100px;
+}
+.red{
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}
+h2{
+  text-align: center;
+}
+hr{
+ width:  10%;
+}
+.form{
+  width: 50%;
+  margin: auto;
+  position: relative;
+}
+form{
+  margin: auto;
+  width: 50%;
+  text-align: right;
+}
+form input{
+  width: 100%;
+}
+form button{
+  position: relative;
+  right: 0px;
+  text-align: right;
+}
