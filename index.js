@@ -145,3 +145,44 @@ if (storageAvailable('localStorage')) {
     resetInput();
   });
 }
+
+//Menu links
+const menuBtns = document.querySelectorAll('.menuBtn');
+//Sections
+const allBooks = document.querySelector('.all-books');
+const addingBook = document.querySelector('.adding-book');
+const contact = document.querySelector('.contact');
+
+function displaySection(e) {
+  if (e.target.id === 'display-list') {
+    allBooks.style.display = 'block';
+    addingBook.style.display = 'none';
+    contact.style.display = 'none';
+  } else if (e.target.id === 'display-form') {
+    allBooks.style.display = 'none';
+    addingBook.style.display = 'block';
+    contact.style.display = 'none';
+  } else {
+    allBooks.style.display = 'none';
+    addingBook.style.display = 'none';
+    contact.style.display = 'block';
+  }
+}
+
+menuBtns.forEach(btn => {
+  btn.addEventListener('click', displaySection);
+})
+
+//Adding date
+const dateContainer = document.querySelector('#date');
+
+const date = new Date();
+
+const year = date.getFullYear();
+const month = date.toLocaleString('default', { month: 'long' });
+const day = date.getDate();
+const hour = date.getHours();
+const minutes = date.getMinutes();
+const seconds = date.getSeconds();
+
+dateContainer.textContent = `${month} ${day} ${year}, ${hour}:${minutes}:${seconds}`; 

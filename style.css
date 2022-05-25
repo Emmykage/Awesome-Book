@@ -4,26 +4,38 @@
 
 .container {
   margin: auto;
-  max-width: 80%;
+  max-width: 90%;
 }
 nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 2px solid black;
-  padding: 2px;
+  padding: 0 2px;
 
 }
 nav ul{
   display: flex;
   list-style: none;
+  margin: 5px 0;
+  padding: 0;
 }
 nav ul li{
   padding: 12px;
-
 }
+
+nav ul li:nth-child(2) {
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+}
+
 nav ul li a{
   text-decoration: none;
+  color: black;
+}
+
+nav ul li a:focus{
+  color: blue;
 }
 
 #date {
@@ -46,6 +58,7 @@ h1 {
   align-items: center;
   padding: 0 15px;
   border: 1px solid #000;
+  box-sizing: border-box;
 }
 
 .bk-details {
@@ -63,6 +76,10 @@ p {
 
 .flex:nth-child(even) {
   background-color: rgb(207, 207, 207);
+}
+
+.adding-book, .contact {
+  display: none;
 }
 
 .add-book {
@@ -119,5 +136,11 @@ form button {
 }
 
 footer {
+  position: fixed;
+  /* left: 0;
+  right: 0; */
+  bottom: 0;
+  margin-bottom: 20px;
+  width: 90%;
   border: 2px solid black;
 }
