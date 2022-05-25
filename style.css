@@ -2,17 +2,20 @@
   background-color: transparent;
 }
 
-.container{
+.container {
   margin: auto;
   max-width: 80%;
 }
-h1{
+
+h1 {
   text-align: center;
 }
-.col-1{
+
+.col-1 {
   width: 100%;
 }
-.flex{
+
+.flex {
   width: 100%;
   margin: auto;
   display: flex;
@@ -20,62 +23,74 @@ h1{
   align-items: center;
   padding: 0 15px;
   border: 1px solid #000;
-
-
 }
-.bk-details{
+
+.bk-details {
   display: flex;
   align-items: center;
 }
-p{
+
+p {
   padding: 8px;
 }
 
-.flex:nth-child(odd){
+.flex:nth-child(odd) {
   background-color: grey;
-};
-.flex:nth-child(even){
+}
+
+.flex:nth-child(even) {
   background-color: rgb(207, 207, 207);
-};
-.add-book{
+}
+
+.add-book {
   margin: auto;
 }
+
 .color {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-.blue{
+
+.blue {
   background-color: blue;
   width: 100px;
   height: 100px;
 }
-.red{
+
+.red {
   background-color: red;
   width: 100px;
   height: 100px;
 }
-h2{
+
+h2 {
   text-align: center;
 }
-hr{
- width:  10%;
+
+hr {
+  width: 10%;
+  margin: 10px auto 40px;
 }
-.form{
+
+.form {
   width: 50%;
   margin: auto;
   position: relative;
 }
-form{
+
+form {
   margin: auto;
   width: 50%;
   text-align: right;
 }
-form input{
+
+form input {
   width: 100%;
 }
-form button{
+
+form button {
   position: relative;
-  right: 0px;
+  right: 0;
   text-align: right;
 }

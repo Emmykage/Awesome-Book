@@ -82,11 +82,11 @@ function displayBook(title, author, id) {
 
   // Book container
   const bkdiv = document.createElement('div');
-  bkdiv.classList.add("flex");
+  bkdiv.classList.add('flex');
 
-  //book-details container
-  const bkdetails = document.createElement("div");
-  bkdetails.classList.add("bk-details");
+  // book-details container
+  const bkdetails = document.createElement('div');
+  bkdetails.classList.add('bk-details');
   bkdiv.appendChild(bkdetails);
 
   // Title of the book
@@ -94,22 +94,21 @@ function displayBook(title, author, id) {
   addTitle.textContent = `"${title}"`;
   bkdetails.appendChild(addTitle);
 
-  //paragraph insertion
+  // paragraph insertion
 
-  const paragraph = document.createElement("p");
+  const paragraph = document.createElement('p');
   bkdetails.appendChild(paragraph);
-  paragraph.innerText = "by"
+  paragraph.innerText = 'by';
 
   // Author of the book
   const addAuthor = document.createElement('p');
   addAuthor.innerHTML = author;
   bkdetails.appendChild(addAuthor);
 
-  //btn-details container
-  const btnDiv = document.createElement("div");
-  btnDiv.classList.add("btn-details");
+  // btn-details container
+  const btnDiv = document.createElement('div');
+  btnDiv.classList.add('btn-details');
   bkdiv.appendChild(btnDiv);
-
 
   // Remove Button
   const rmBtn = document.createElement('button');
@@ -120,7 +119,7 @@ function displayBook(title, author, id) {
   btnDiv.appendChild(rmBtn);
 
   // Parting line
-  const hr = document.createElement('hr');
+  // const hr = document.createElement('hr');
   // bkdiv.appendChild(hr);
 
   bookContainer.appendChild(bkdiv);
@@ -143,6 +142,6 @@ if (storageAvailable('localStorage')) {
     const bookId = library.addBook(bookName.value, bookAuthor.value);
     library.saveBooks();
     displayBook(bookName.value, bookAuthor.value, bookId);
-    resetInput();    
+    resetInput();
   });
 }
