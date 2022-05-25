@@ -69,7 +69,7 @@ class BookManager {
     const filteredBooks = this.bookList.filter((book) => book.id !== bookId);
     localStorage.setItem('bookList', JSON.stringify(filteredBooks));
 
-    // Remove from the screen
+    // Remove from the Interface (DOM)
     e.target.parentElement.remove();
   }
 }
@@ -108,6 +108,11 @@ function displayBook(title, author, id) {
   bookContainer.appendChild(bkdiv);
 }
 
+function resetInput() {
+  bookName.value = '';
+  bookAuthor.value = '';
+}
+
 if (storageAvailable('localStorage')) {
   window.addEventListener('load', () => {
     books = library.getBooks();
@@ -120,5 +125,6 @@ if (storageAvailable('localStorage')) {
     const bookId = library.addBook(bookName.value, bookAuthor.value);
     library.saveBooks();
     displayBook(bookName.value, bookAuthor.value, bookId);
+    resetInput();    
   });
 }
