@@ -1,53 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awesome Books</title>
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
+
 <body>
 
     <div class="container">
         <header>
-            <nav> 
-
+            <nav>
+                <a>Awesome Books</a>
                 <ul>
-                    <li><a href="#">List</a></li>
-                    <li><a href="#">Add New</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#" id="display-list">List</a></li>
+                    <li><a href="#" id="display-form">Add New</a></li>
+                    <li><a href="#" id="display-contact">Contact</a></li>
                 </ul>
             </nav>
+            <p id="date">March, 19 2020 9.15</p>
         </header>
         <section>
-            <h1>Awesome Books</h1>
-              <div class="col-1">      
+
+            <div class="all-books">
+                <h1>All Awesome Books</h1>
+                <div class="col-1">
                 </div>
+            </div>
 
-                 <div class="add-book">
-             <h2>Add New Book</h2>
-              <hr>
-        <div class="form">
-            <form>
-                <input type="text" id="name" placeholder="Title" required> <br>
-           <input type="text" id="author" placeholder="Author" required> <br>
-           <button type="submit" id="add">Add Book</button>
+            <div class="adding-book">
+                <div class="add-book">
+                    <h2>Add New Book</h2>
+                    <hr>
+                    <div class="form">
+                        <form>
+                            <input type="text" id="name" placeholder="Title" required> <br><br>
+                            <input type="text" id="author" placeholder="Author" required> <br><br>
+                            <button type="submit" id="add">Add Book</button>
 
-            </form>
-           
-        </div>
-        <div> <p>Copyright</p></div>
-    </div>
-   
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="contact">
+                <h1>Contact Information</h1>
+                <p>Do you have any questions or you just want to say "Hello"?</p>
+                <p>You can reach out to us!</p>
+                <ul>
+                    <li>Our e-mail: mail@mail.com </li>
+                    <li>Our phone number: 0415442645 </li>
+                    <li>Our address: Streetname 22, 84503, City, Country </li>
+                </ul>
+            </div>
 
         </section>
-        
-        
+
+
     </div>
+
+    <footer>
+        <p>Copyright</p>
+    </footer>
     <script src="index.js"></script>
-    </body>
-    
-   
+
+</body>
+
+
 </html>
