@@ -146,9 +146,9 @@ if (storageAvailable('localStorage')) {
   });
 }
 
-//Menu links
+// Menu links
 const menuBtns = document.querySelectorAll('.menuBtn');
-//Sections
+// Sections
 const allBooks = document.querySelector('.all-books');
 const addingBook = document.querySelector('.adding-book');
 const contact = document.querySelector('.contact');
@@ -169,11 +169,11 @@ function displaySection(e) {
   }
 }
 
-menuBtns.forEach(btn => {
+menuBtns.forEach((btn) => {
   btn.addEventListener('click', displaySection);
-})
+});
 
-//Adding date
+// Adding date
 const dateContainer = document.querySelector('#date');
 
 const date = new Date();
@@ -185,4 +185,4 @@ const hour = date.getHours();
 const minutes = date.getMinutes();
 const seconds = date.getSeconds();
 
-dateContainer.textContent = `${month} ${day} ${year}, ${hour}:${minutes}:${seconds}`; 
+dateContainer.textContent = `${month} ${day} ${year}, ${hour}:${minutes}:${seconds}`;
