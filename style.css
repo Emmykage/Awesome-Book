@@ -14,7 +14,12 @@ h1 {
 .col-1 {
   width: 100%;
 }
-
+.alert-success{
+  background-color: green;
+}
+.alert-danger{
+  background-color: red;
+}
 .flex {
   width: 100%;
   margin: auto;

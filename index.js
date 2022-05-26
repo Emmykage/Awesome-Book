@@ -168,6 +168,33 @@ class Interface{
 
   
   }
+  static deleteBook(target){
+
+    if(target.classList.contains("delBtn"))
+    target.parentNode.parentNode.remove();
+    
+
+  }
+  static clearField(){
+const title = document.getElementById("title");
+const author = document.getElementById("author");
+
+author.value = "";
+author.value= ""
+
+  }
+
+  static showAlert(message, classname){
+    const messdiv = document.createElement("div");
+    messdiv.className = `alert alert-${classname}`;
+    messdiv.innerHTML = message;
+    document.querySelector(".col-1").prepend(messdiv);
+
+    setTimeout(() => {
+      messdiv.remove();
+      
+    }, 2000);
+  }
 
   static addBook(book){
 
@@ -227,7 +254,11 @@ class Interface{
         <div class="bk-details"> <h2>"${book.title}"</h2></div>
         <p>by</p>
         <p> ${book.author}</p>
-        <button> Remove </button>
+
+        <div>
+        <button class="delBtn"> Remove </button>
+
+        </div>
       
       `
       // ------------end-------------------
@@ -245,11 +276,25 @@ document.getElementById("form").addEventListener("submit", function(){
   const title = document.getElementById("name").value;
   const author = document.getElementById("author").value;
 
+  if(!title || !author){
+    showAlert("please enter a valid input", "danger")
+    return
+  }
+
 
   const book = new Books(title, author);
   Interface.addBook(book);
 
   // Interface.display(title, author)
 
+  Interface.clearField()
+  Interface.showAlert("thanks", "success");
 
 })
+
+document.querySelector(".col-1").addEventListener("click", removeBook);
+function removeBook(e){
+ Interface.deleteBook(e.target);
+ Interface.showAlert("book removed", "success");
+
+}
