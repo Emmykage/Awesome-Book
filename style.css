@@ -10,6 +10,10 @@
 h1 {
   text-align: center;
 }
+#add:active{
+background-color: chocolate;
+color: #fff;
+}
 
 .col-1 {
   width: 100%;
