@@ -1,3 +1,150 @@
 * {
   background-color: transparent;
 }
+
+.container {
+  margin: auto;
+  max-width: 90%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid black;
+  padding: 0 2px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 5px 0;
+  padding: 0;
+}
+
+nav ul li {
+  padding: 12px;
+}
+
+nav ul li:nth-child(2) {
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+nav ul li a:focus {
+  color: blue;
+}
+
+#date {
+  text-align: right;
+}
+
+h1 {
+  text-align: center;
+}
+
+.col-1 {
+  width: 100%;
+}
+
+.flex {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+}
+
+.bk-details {
+  display: flex;
+  align-items: center;
+}
+
+p {
+  padding: 8px;
+}
+
+.flex:nth-child(odd) {
+  background-color: grey;
+}
+
+.flex:nth-child(even) {
+  background-color: rgb(207, 207, 207);
+}
+
+.adding-book,
+.contact {
+  display: none;
+}
+
+.add-book {
+  margin: auto;
+}
+
+.color {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.blue {
+  background-color: blue;
+  width: 100px;
+  height: 100px;
+}
+
+.red {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}
+
+h2 {
+  text-align: center;
+}
+
+hr {
+  width: 10%;
+  margin: 10px auto 40px;
+}
+
+.form {
+  width: 50%;
+  margin: auto;
+  position: relative;
+}
+
+form {
+  margin: auto;
+  width: 50%;
+  text-align: right;
+}
+
+form input {
+  width: 100%;
+}
+
+form button {
+  position: relative;
+  right: 0;
+  text-align: right;
+}
+
+footer {
+  position: fixed;
+
+  /* left: 0;
+  right: 0; */
+  bottom: 0;
+  margin-bottom: 20px;
+  width: 90%;
+  border: 2px solid black;
+}
