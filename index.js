@@ -1,14 +1,15 @@
 const addBtn = document.getElementById("add");
 const mainCol = document.querySelector(".col-1");
 
+
 class Books {
   constructor(title, author){
-    this.title = title;
-    this.author = author;
+    this.Title = title;
+    this.Author = author;
   }
 }
 class UI {
-  static addBooks(title, author){
+  static addBooks(book){
     const bookRow =  document.createElement("div");
     bookRow.classList.add("flex");
 
@@ -16,8 +17,8 @@ class UI {
     bookDetails.classList.add("bk-details");
 
     const bookTitle = document.createElement("h2");
-    bookTitle.innerHTML = title;
-    bookDetails.appendChild(bookTitle)
+    bookTitle.innerHTML = `"${book.title}"` ;
+    bookDetails.appendChild(bookTitle);
 
     const byP = document.createElement("p");
     byP.innerText = "By";
@@ -25,15 +26,15 @@ class UI {
     bookDetails.appendChild(byP);
 
     const bookAuthor = document.createElement("p");
-    bookAuthor.innerText = author;
     bookDetails.appendChild(bookAuthor);
+    bookAuthor.innerText = book.Author;
+
 
     bookRow.appendChild(bookDetails);
     mainCol.appendChild(bookRow);
     
 
-    console.log(title, author)
-
+    
   }
 }
 
@@ -41,12 +42,13 @@ class UI {
 addBtn.addEventListener("click", addLibrary);
 
 function addLibrary(){
-  const title = document.getElementById("name");
-  const author = document.getElementById("author");
+  const title = document.getElementById("name").value;
+  const author = document.getElementById("author").value;
 
-  const book = new Books(title.value, author.value);
+  const book = new Books(title, author);
 
   UI.addBooks(book);
+
 
 
 }
